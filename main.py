@@ -1,6 +1,25 @@
+# Create a set of visited (0,1)
+# In nums find starting position
+# Define the bounds len(nums) and len(nums[0])
+# Each row has the same number of columns 
+# 2 (0,1)
+
 def even_sum(grid, starting_position):
-    # Your code here!
-    pass
+    sum_of_even_nums = 0
+    visited = set()
+
+def neighbors(grid, pos):
+    r, c = pos
+    list_of_neighbors = [
+        (r, c-1),
+        (r, c+1),
+        (r-1, c),
+        (r+1, c)
+    ]
+  
+    filtered_list = [ (r,c) for (r,c) in list_of_neighbors if 0 <= r < len(grid) and 0 <= c < len(grid[0]) ]
+    
+    return filtered_list
 
 
 nums = (
